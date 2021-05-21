@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>User</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-item>Formation IONIC 6</ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-item lines="none">
+    <ion-label text-wrap>
+      <ion-text color="medium">
+        <p>Dark Vador</p>
+      </ion-text>
+    </ion-label>
+    <ion-toggle (ionChange)="onClick($event)" slot="start">Dark Mode</ion-toggle>
+  </ion-item>
+
+  <ion-list>
+    <ion-list-header>
+      <h4>La liste des users</h4>
+    </ion-list-header>
+    <ion-item lines="inset" *ngFor="let elt of users">
+      <ion-label>
+        <p>{{ elt.id }}</p>
+        <p>{{ elt.username }}</p>
+        <p>{{ elt.email }}</p>
+      </ion-label>
+      <div>
+        <ion-icon name="create" style="zoom:1.6"></ion-icon>
+        <ion-icon name="trash" style="zoom:1.6" (click)="delUser(elt.id)"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!-- <ion-list *ngFor="let p of data">
+    <ion-item>
+      <ion-avatar slot="start">
+             </ion-avatar>
+      <ion-label>{{p.id}}</ion-label>
+      <ion-label>{{p.username}}</ion-label>
+      <ion-label>{{p.email}}</ion-label>
+      <ion-label>{{p.password}}</ion-label>
+    </ion-item>
+  </ion-list> -->
+
+<!--   
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Card</ion-title>
+      </ion-toolbar>
+    </ion-header>,
+    <ion-content fullscreen>
+      <ion-card>
+        <img src="../../../assets/img/madison.jpg" />
+        <ion-card-header>
+          <ion-card-subtitle>Destination</ion-card-subtitle>
+          <ion-card-title>Madison, WI</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the
+          Wisconsin Territory in 1836.
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ion-app> -->
+
+</ion-content>
